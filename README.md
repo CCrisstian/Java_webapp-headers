@@ -133,6 +133,7 @@ System.out.println("Scheme: " + scheme);
 Salida posible: "Scheme: https"
 
 <h2>getHeader</h2>
+
 Ejemplos comunes de cómo se puede usar `getHeader` en un servlet:
 
 

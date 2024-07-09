@@ -161,3 +161,21 @@ String referer = request.getHeader("Referer");
 System.out.println("Referer: " + referer);
 ```
 
+<h2>getRemoteAddr</h2>
+
+El método `getRemoteAddr` de la clase `HttpServletRequest` se utiliza para obtener la dirección IP del cliente que realizó la solicitud. Esta información es útil para propósitos de registro, análisis y control de acceso basado en la dirección IP del cliente.
+
+<h3>Firma del método</h3>
+
+```java
+public String getRemoteAddr()
+```
+
+- Este método no tiene parámetros.
+- Devuelve una String que contiene la dirección IP del cliente que hizo la solicitud.
+
+<h3>Usos comunes de getRemoteAddr</h3>
+
+- <b>Registro de actividad del cliente</b>: Almacenar la dirección IP del cliente en los registros del servidor para análisis de uso y auditoría.
+- <b>Control de acceso</b>: Implementar restricciones basadas en la dirección IP para permitir o denegar el acceso a ciertos recursos.
+- <b>Detección de fraudes</b>: Utilizar la dirección IP para identificar patrones sospechosos y prevenir actividades fraudulentas.

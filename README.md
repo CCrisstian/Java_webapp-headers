@@ -58,6 +58,7 @@ public class MyServlet extends HttpServlet {
 
 -  <b>Manejo de Excepciones</b>: El método doGet puede lanzar ServletException y IOException, por lo que debes asegurarte de manejar o declarar estas excepciones adecuadamente.
 
+<h1 align="center">Algunos Métodos de la clase HttpServletRequest</h1>
 <h2>getMethod()</h2>
 <p>Este método devuelve el método HTTP de la solicitud. Los métodos HTTP comunes incluyen GET, POST, PUT, DELETE, etc. Esto es útil para determinar qué tipo de operación se está solicitando.</p>
 

@@ -131,3 +131,32 @@ String scheme = request.getScheme();
 System.out.println("Scheme: " + scheme);
 ```
 Salida posible: "Scheme: https"
+
+<h2>getHeader</h2>
+Ejemplos comunes de cómo se puede usar `getHeader` en un servlet:
+
+
+- Obtener el tipo de contenido aceptado</b>:
+```java
+String accept = request.getHeader("Accept");
+System.out.println("Accept: " + accept);
+```
+
+- Obtener la codificación aceptada:
+```java
+String acceptEncoding = request.getHeader("Accept-Encoding");
+System.out.println("Accept-Encoding: " + acceptEncoding);
+```
+
+- Obtener la lengua preferida:
+```java
+String acceptLanguage = request.getHeader("Accept-Language");
+System.out.println("Accept-Language: " + acceptLanguage);
+```
+
+- Obtener la cabecera de referer:
+```java
+String referer = request.getHeader("Referer");
+System.out.println("Referer: " + referer);
+```
+

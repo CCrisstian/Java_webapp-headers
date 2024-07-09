@@ -104,3 +104,30 @@ String servletPath = request.getServletPath();
 System.out.println("Servlet Path: " + servletPath);
 ```
 Salida posible: "Servlet Path: /myservlet"
+
+<h2>getLocalAddr()</h2>
+<p>Este método devuelve la dirección IP del servidor en la que se recibió la solicitud. Es útil cuando el servidor tiene múltiples interfaces de red o está detrás de un balanceador de carga.</p>
+
+```java
+String localAddr = request.getLocalAddr();
+System.out.println("Local Address: " + localAddr);
+```
+Salida posible: "Local Address: 192.168.1.100"
+
+<h2>getLocalPort()</h2>
+<p>Este método devuelve el puerto en el que el servidor está recibiendo la solicitud. Esto es útil cuando el servidor está escuchando en múltiples puertos o cuando necesitas conocer el puerto exacto utilizado para la conexión.</p>
+
+```java
+int localPort = request.getLocalPort();
+System.out.println("Local Port: " + localPort);
+```
+Salida posible: "Local Port: 8080"
+
+<h2>getScheme()</h2>
+<p>Este método devuelve el esquema de la solicitud, que es el protocolo utilizado (por ejemplo, "http" o "https"). Esto es útil para determinar si la solicitud fue realizada a través de HTTP o HTTPS.</p>
+
+```java
+String scheme = request.getScheme();
+System.out.println("Scheme: " + scheme);
+```
+Salida posible: "Scheme: https"

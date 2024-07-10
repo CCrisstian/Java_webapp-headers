@@ -272,3 +272,16 @@ mapper.configure(SerializationFeature.INDENT_OUTPUT, true); // Formatear JSON co
 - <b>writeValue(File resultFile, Object value)</b>: Escribe JSON en un archivo.
 - <b>readValue(String content, Class<T> valueType)</b>: Convierte una cadena JSON en un objeto Java.
 - <b>readValue(File src, Class<T> valueType)</b>: Lee JSON desde un archivo y lo convierte en un objeto Java.
+
+<h1 align="center">ServletInputStream</h1>
+
+La clase `ServletInputStream` es una parte fundamental de la API de Servlets en Java, utilizada para leer los datos del cuerpo de una solicitud HTTP cuando una aplicación web recibe una petición. Esto es especialmente útil para manejar datos binarios o grandes cargas de datos en una solicitud HTTP, como archivos subidos o datos JSON enviados en una solicitud POST.
+
+<h3>Características de ServletInputStream:</h3>
+
+- <b>Subclase de InputStream</b>:
+  - `ServletInputStream` es una subclase de `java.io.InputStream`, lo que significa que hereda todos los métodos de `InputStream` y puede ser utilizada en cualquier contexto donde se espere un InputStream.
+- <b>Lectura de Datos</b>:
+  - Se utiliza para leer datos del cuerpo de la solicitud HTTP, byte por byte o en bloques, similar a cómo se leerían datos de cualquier otro flujo de entrada en Java.
+- <b>Métodos Específicos</b>:
+  - Además de los métodos heredados de `InputStream`, `ServletInputStream` proporciona métodos adicionales para verificar si hay datos disponibles sin bloquear la ejecución, mediante el método `isFinished()` y `isReady()`.

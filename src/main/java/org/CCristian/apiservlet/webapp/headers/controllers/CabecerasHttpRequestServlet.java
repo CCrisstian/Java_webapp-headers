@@ -1,4 +1,4 @@
-package org.CCristian.apiservlet.webapp.headers;
+package org.CCristian.apiservlet.webapp.headers.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

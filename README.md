@@ -180,6 +180,23 @@ public String getRemoteAddr()
 - <b>Control de acceso</b>: Implementar restricciones basadas en la dirección IP para permitir o denegar el acceso a ciertos recursos.
 - <b>Detección de fraudes</b>: Utilizar la dirección IP para identificar patrones sospechosos y prevenir actividades fraudulentas.
 
+<h2>getRequestDispatcher</h2>
+
+El método `getRequestDispatcher` es parte de la API de servlets en Java y se utiliza para obtener un objeto `RequestDispatcher`. Este objeto permite a los servlets reenviar una solicitud a otro recurso del servidor (como otro servlet, una JSP o un archivo HTML) o incluir el contenido de otro recurso en la respuesta.
+
+<h3>Usos Comunes de RequestDispatcher:</h3>
+
+- <b>Forward (Reenvío)</b>:
+  - Reenvía la solicitud y la respuesta a otro recurso del servidor. El control se transfiere al nuevo recurso, que genera la respuesta final. El cliente no sabe que el control se ha transferido a otro recurso, ya que la URL en el navegador no cambia.
+- <b>Include (Incluir)</b>:
+  - Incluye el contenido de otro recurso en la respuesta. El control se devuelve al servlet original después de que el recurso incluido haya terminado de procesar.
+
+<h3>Ventajas del Uso de RequestDispatcher:</h3>
+
+- <b>Modularidad</b>: Permite dividir la lógica de la aplicación en componentes más pequeños y reutilizables.
+- <b>Reutilización</b>: Facilita la reutilización de componentes como cabeceras y pies de página en varias páginas web.
+- <b>Desacoplamiento</b>: Los servlets pueden delegar responsabilidades a otros recursos, manteniendo el código más limpio y manejable.
+
 <h1 align="center">Json</h1>
 <p>JSON (JavaScript Object Notation) es un formato de texto ligero y fácil de leer/escribir para el intercambio de datos. Se utiliza comúnmente para transmitir datos entre un servidor y una aplicación web, así como para almacenar y organizar datos estructurados de manera sencilla.</p>
 <h3>Características de JSON:</h3>

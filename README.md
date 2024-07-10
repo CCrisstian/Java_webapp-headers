@@ -58,6 +58,53 @@ public class MyServlet extends HttpServlet {
 
 -  <b>Manejo de Excepciones</b>: El método doGet puede lanzar ServletException y IOException, por lo que debes asegurarte de manejar o declarar estas excepciones adecuadamente.
 
+
+<h1 align="center">Headers</h1>
+<p>En el contexto de la API de servlets de Java, los headers (encabezados) son parte de la solicitud y la respuesta HTTP. Los encabezados HTTP son pares clave-valor que proporcionan información adicional sobre la solicitud o la respuesta, como el tipo de contenido, la longitud del contenido, las cookies, la información del agente de usuario, y más.</p>
+<h2>Tipos de Encabezados:</h2>
+
+- <b>Request Headers (Encabezados de Solicitud)</b>:
+ - Proporcionan información adicional sobre la solicitud enviada por el cliente al servidor.
+ - Ejemplos: `Host`, `User-Agent`, `Accept`, `Content-Type`, `Authorization`, etc.
+- <b>Response Headers (Encabezados de Respuesta)</b>:
+ - Proporcionan información adicional sobre la respuesta que el servidor envía al cliente.
+ - Ejemplos: `Content-Type`, `Content-Length`, `Set-Cookie`, `Location`, etc.
+
+<h2>Uso de Encabezados en la API de Servlets:</h2>
+<h3>Obtener Encabezados de Solicitud:</h3>
+
+La interfaz `HttpServletRequest` proporciona métodos para acceder a los encabezados de la solicitud:
+
+- <b>getHeader(String name)</b>: Devuelve el valor del encabezado especificado.
+- <b>getHeaders(String name)</b>: Devuelve todos los valores del encabezado especificado como una enumeración de cadenas.
+- <b>getHeaderNames()</b>: Devuelve una enumeración de los nombres de todos los encabezados de la solicitud.
+
+<h3>Establecer Encabezados de Respuesta:</h3>
+
+La interfaz `HttpServletResponse` proporciona métodos para configurar los encabezados de la respuesta:
+
+- <b>setHeader(String name, String value)</b>: Establece un encabezado de respuesta con el valor especificado.
+- <b>addHeader(String name, String value)</b>: Añade un encabezado de respuesta con el valor especificado.
+- <b>setDateHeader(String name, long date)</b>: Establece un encabezado de respuesta con una fecha especificada.
+- <b>setIntHeader(String name, int value)</b>: Establece un encabezado de respuesta con un valor entero especificado.
+
+<h2>Importancia de los Encabezados HTTP:</h2>
+
+- <b>Control del Comportamiento del Cliente y del Servidor</b>:
+ - Los encabezados como `Cache-Control`, `Expires` y `Pragma` controlan el almacenamiento en caché de las respuestas.
+ - Content-Type y Content-Length indican el tipo y la longitud del contenido, respectivamente.
+- <b>Autenticación y Autorización</b>:
+  - Los encabezados como Authorization se utilizan para manejar la autenticación.
+  - `WWW-Authenticate` se utiliza para solicitar credenciales de autenticación.
+- <b>Manejo de Cookies</b>:
+  - `Set-Cookie` se utiliza para enviar cookies desde el servidor al cliente.
+  - `Cookie` se utiliza para enviar cookies desde el cliente al servidor.
+- <b>Redirección</b>:
+  - `Location` se utiliza para redirigir a los clientes a una nueva URL.
+- <b>Control de Idioma</b>:
+  - `Accept-Language` se utiliza para especificar el idioma preferido del cliente.
+  - `Content-Language` se utiliza para especificar el idioma del contenido de la respuesta.
+
 <h1 align="center">Algunos Métodos de la clase HttpServletRequest</h1>
 <h2>getMethod()</h2>
 <p>Este método devuelve el método HTTP de la solicitud. Los métodos HTTP comunes incluyen GET, POST, PUT, DELETE, etc. Esto es útil para determinar qué tipo de operación se está solicitando.</p>

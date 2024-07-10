@@ -1,5 +1,5 @@
 <h1 align="center">doGet</h1>
-<p>El método doGet es una parte fundamental de la programación de servlets en Java. Es un método que debes sobrescribir cuando necesitas manejar solicitudes HTTP GET en tu aplicación web. Aquí tienes una explicación detallada de cómo funciona y cómo se utiliza:</p>
+<p>El método doGet es una parte fundamental de la programación de servlets en Java. Es un método que se debe sobrescribir cuando se necesita manejar solicitudes HTTP GET en una aplicación web.</p>
 
 <h3>Concepto del método doGet</h3>
 

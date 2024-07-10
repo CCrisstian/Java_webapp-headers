@@ -267,7 +267,8 @@ mapper.configure(SerializationFeature.INDENT_OUTPUT, true); // Formatear JSON co
 ```
 
 <h3>Métodos Comunes:<h3></h3>
-- <b>writeValueAsString(Object value)</b>b>: Convierte un objeto en una cadena JSON.
+        
+- <b>writeValueAsString(Object value)</b>: Convierte un objeto en una cadena JSON.
 - <b>writeValue(File resultFile, Object value)</b>: Escribe JSON en un archivo.
 - <b>readValue(String content, Class<T> valueType)</b>: Convierte una cadena JSON en un objeto Java.
 - <b>readValue(File src, Class<T> valueType)</b>: Lee JSON desde un archivo y lo convierte en un objeto Java.

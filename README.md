@@ -1,5 +1,5 @@
 <h1 align="center">doGet</h1>
-<p>El método doGet es una parte fundamental de la programación de servlets en Java. Es un método que debes sobrescribir cuando necesitas manejar solicitudes HTTP GET en tu aplicación web. Aquí tienes una explicación detallada de cómo funciona y cómo se utiliza:</p>
+<p>El método doGet es una parte fundamental de la programación de servlets en Java. Es un método que se debe sobrescribir cuando se necesita manejar solicitudes HTTP GET en una aplicación web.</p>
 
 <h3>Concepto del método doGet</h3>
 
@@ -57,6 +57,53 @@ public class MyServlet extends HttpServlet {
 -  <b>Escribir la Respuesta</b>: Utiliza el objeto PrintWriter obtenido de response.getWriter() para escribir los datos que deseas enviar al cliente. Esto puede ser HTML, texto plano, JSON, etc.
 
 -  <b>Manejo de Excepciones</b>: El método doGet puede lanzar ServletException y IOException, por lo que debes asegurarte de manejar o declarar estas excepciones adecuadamente.
+
+
+<h1 align="center">Headers</h1>
+<p>En el contexto de la API de servlets de Java, los headers (encabezados) son parte de la solicitud y la respuesta HTTP. Los encabezados HTTP son pares clave-valor que proporcionan información adicional sobre la solicitud o la respuesta, como el tipo de contenido, la longitud del contenido, las cookies, la información del agente de usuario, y más.</p>
+<h2>Tipos de Encabezados:</h2>
+
+- <b>Request Headers (Encabezados de Solicitud)</b>:
+  - Proporcionan información adicional sobre la solicitud enviada por el cliente al servidor.
+  - Ejemplos: `Host`, `User-Agent`, `Accept`, `Content-Type`, `Authorization`, etc.
+- <b>Response Headers (Encabezados de Respuesta)</b>:
+  - Proporcionan información adicional sobre la respuesta que el servidor envía al cliente.
+  - Ejemplos: `Content-Type`, `Content-Length`, `Set-Cookie`, `Location`, etc.
+
+<h2>Uso de Encabezados en la API de Servlets:</h2>
+<h3>Obtener Encabezados de Solicitud:</h3>
+
+La interfaz `HttpServletRequest` proporciona métodos para acceder a los encabezados de la solicitud:
+
+- <b>getHeader(String name)</b>: Devuelve el valor del encabezado especificado.
+- <b>getHeaders(String name)</b>: Devuelve todos los valores del encabezado especificado como una enumeración de cadenas.
+- <b>getHeaderNames()</b>: Devuelve una enumeración de los nombres de todos los encabezados de la solicitud.
+
+<h3>Establecer Encabezados de Respuesta:</h3>
+
+La interfaz `HttpServletResponse` proporciona métodos para configurar los encabezados de la respuesta:
+
+- <b>setHeader(String name, String value)</b>: Establece un encabezado de respuesta con el valor especificado.
+- <b>addHeader(String name, String value)</b>: Añade un encabezado de respuesta con el valor especificado.
+- <b>setDateHeader(String name, long date)</b>: Establece un encabezado de respuesta con una fecha especificada.
+- <b>setIntHeader(String name, int value)</b>: Establece un encabezado de respuesta con un valor entero especificado.
+
+<h2>Importancia de los Encabezados HTTP:</h2>
+
+- <b>Control del Comportamiento del Cliente y del Servidor</b>:
+ - Los encabezados como `Cache-Control`, `Expires` y `Pragma` controlan el almacenamiento en caché de las respuestas.
+ - Content-Type y Content-Length indican el tipo y la longitud del contenido, respectivamente.
+- <b>Autenticación y Autorización</b>:
+  - Los encabezados como Authorization se utilizan para manejar la autenticación.
+  - `WWW-Authenticate` se utiliza para solicitar credenciales de autenticación.
+- <b>Manejo de Cookies</b>:
+  - `Set-Cookie` se utiliza para enviar cookies desde el servidor al cliente.
+  - `Cookie` se utiliza para enviar cookies desde el cliente al servidor.
+- <b>Redirección</b>:
+  - `Location` se utiliza para redirigir a los clientes a una nueva URL.
+- <b>Control de Idioma</b>:
+  - `Accept-Language` se utiliza para especificar el idioma preferido del cliente.
+  - `Content-Language` se utiliza para especificar el idioma del contenido de la respuesta.
 
 <h1 align="center">Algunos Métodos de la clase HttpServletRequest</h1>
 <h2>getMethod()</h2>
@@ -180,6 +227,23 @@ public String getRemoteAddr()
 - <b>Control de acceso</b>: Implementar restricciones basadas en la dirección IP para permitir o denegar el acceso a ciertos recursos.
 - <b>Detección de fraudes</b>: Utilizar la dirección IP para identificar patrones sospechosos y prevenir actividades fraudulentas.
 
+<h2>getRequestDispatcher</h2>
+
+El método `getRequestDispatcher` es parte de la API de servlets en Java y se utiliza para obtener un objeto `RequestDispatcher`. Este objeto permite a los servlets reenviar una solicitud a otro recurso del servidor (como otro servlet, una JSP o un archivo HTML) o incluir el contenido de otro recurso en la respuesta.
+
+<h3>Usos Comunes de RequestDispatcher:</h3>
+
+- <b>Forward (Reenvío)</b>:
+  - Reenvía la solicitud y la respuesta a otro recurso del servidor. El control se transfiere al nuevo recurso, que genera la respuesta final. El cliente no sabe que el control se ha transferido a otro recurso, ya que la URL en el navegador no cambia.
+- <b>Include (Incluir)</b>:
+  - Incluye el contenido de otro recurso en la respuesta. El control se devuelve al servlet original después de que el recurso incluido haya terminado de procesar.
+
+<h3>Ventajas del Uso de RequestDispatcher:</h3>
+
+- <b>Modularidad</b>: Permite dividir la lógica de la aplicación en componentes más pequeños y reutilizables.
+- <b>Reutilización</b>: Facilita la reutilización de componentes como cabeceras y pies de página en varias páginas web.
+- <b>Desacoplamiento</b>: Los servlets pueden delegar responsabilidades a otros recursos, manteniendo el código más limpio y manejable.
+
 <h1 align="center">Json</h1>
 <p>JSON (JavaScript Object Notation) es un formato de texto ligero y fácil de leer/escribir para el intercambio de datos. Se utiliza comúnmente para transmitir datos entre un servidor y una aplicación web, así como para almacenar y organizar datos estructurados de manera sencilla.</p>
 <h3>Características de JSON:</h3>
@@ -272,3 +336,16 @@ mapper.configure(SerializationFeature.INDENT_OUTPUT, true); // Formatear JSON co
 - <b>writeValue(File resultFile, Object value)</b>: Escribe JSON en un archivo.
 - <b>readValue(String content, Class<T> valueType)</b>: Convierte una cadena JSON en un objeto Java.
 - <b>readValue(File src, Class<T> valueType)</b>: Lee JSON desde un archivo y lo convierte en un objeto Java.
+
+<h1 align="center">ServletInputStream</h1>
+
+La clase `ServletInputStream` es una parte fundamental de la API de Servlets en Java, utilizada para leer los datos del cuerpo de una solicitud HTTP cuando una aplicación web recibe una petición. Esto es especialmente útil para manejar datos binarios o grandes cargas de datos en una solicitud HTTP, como archivos subidos o datos JSON enviados en una solicitud POST.
+
+<h3>Características de ServletInputStream:</h3>
+
+- <b>Subclase de InputStream</b>:
+  - `ServletInputStream` es una subclase de `java.io.InputStream`, lo que significa que hereda todos los métodos de `InputStream` y puede ser utilizada en cualquier contexto donde se espere un InputStream.
+- <b>Lectura de Datos</b>:
+  - Se utiliza para leer datos del cuerpo de la solicitud HTTP, byte por byte o en bloques, similar a cómo se leerían datos de cualquier otro flujo de entrada en Java.
+- <b>Métodos Específicos</b>:
+  - Además de los métodos heredados de `InputStream`, `ServletInputStream` proporciona métodos adicionales para verificar si hay datos disponibles sin bloquear la ejecución, mediante el método `isFinished()` y `isReady()`.

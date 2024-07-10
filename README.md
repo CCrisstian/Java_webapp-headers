@@ -221,3 +221,53 @@ public String getRemoteAddr()
 - <b>Legibilidad</b>: El formato es fácil de leer y entender.
 - <b>Compatibilidad</b>: Es compatible con casi todos los lenguajes de programación modernos.
 - <b>Ligero</b>: Es menos verboso que XML, lo que reduce el tamaño de los datos transmitidos.
+
+<h1 align="center">ObjectMapper</h1>
+
+La clase `ObjectMapper` es una parte fundamental de la biblioteca Jackson en Java, que se utiliza para la conversión de objetos Java a JSON y viceversa. Jackson es una de las bibliotecas más populares para trabajar con JSON en Java debido a su facilidad de uso, flexibilidad y rendimiento.
+
+<h3>Características y Usos de ObjectMapper:</h3>
+
+- <b>Serialización (Convertir de Objeto Java a JSON)</b>:
+La serialización es el proceso de convertir un objeto Java en una cadena JSON. Esto es útil cuando se necesita enviar datos desde una aplicación Java a un servicio web que espera recibir JSON.
+
+```java
+ObjectMapper mapper = new ObjectMapper();
+User user = new User("Juan", 30);
+String jsonString = mapper.writeValueAsString(user);
+System.out.println(jsonString); // {"name":"Juan","age":30}
+```
+
+- <b>Deserialización (Convertir de JSON a Objeto Java)</b>:
+La deserialización es el proceso de convertir una cadena JSON en un objeto Java. Esto es útil cuando recibes JSON de un servicio web y necesitas trabajar con él en tu aplicación Java.
+
+```java
+String jsonString = "{\"name\":\"Juan\",\"age\":30}";
+ObjectMapper mapper = new ObjectMapper();
+User user = mapper.readValue(jsonString, User.class);
+System.out.println(user.getName()); // Juan
+```
+
+- <b>Lectura y Escritura desde/para Archivos</b>:
+`ObjectMapper` puede leer y escribir JSON directamente desde y hacia archivos.
+
+```java
+// Escritura en archivo
+mapper.writeValue(new File("user.json"), user);
+
+// Lectura desde archivo
+User userFromFile = mapper.readValue(new File("user.json"), User.class);
+```
+
+- <b>Configuración y Personalización</b>:
+`ObjectMapper` permite configuraciones y personalizaciones avanzadas, como la inclusión o exclusión de propiedades, manejo de fechas, formatos personalizados, etc.
+
+```java
+mapper.configure(SerializationFeature.INDENT_OUTPUT, true); // Formatear JSON con indentación
+```
+
+<h3>Métodos Comunes:<h3></h3>
+- <b>writeValueAsString(Object value)</b>b>: Convierte un objeto en una cadena JSON.
+- <b>writeValue(File resultFile, Object value)</b>: Escribe JSON en un archivo.
+- <b>readValue(String content, Class<T> valueType)</b>: Convierte una cadena JSON en un objeto Java.
+- <b>readValue(File src, Class<T> valueType)</b>: Lee JSON desde un archivo y lo convierte en un objeto Java.

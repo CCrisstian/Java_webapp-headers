@@ -64,11 +64,11 @@ public class MyServlet extends HttpServlet {
 <h2>Tipos de Encabezados:</h2>
 
 - <b>Request Headers (Encabezados de Solicitud)</b>:
- - Proporcionan información adicional sobre la solicitud enviada por el cliente al servidor.
- - Ejemplos: `Host`, `User-Agent`, `Accept`, `Content-Type`, `Authorization`, etc.
+  - Proporcionan información adicional sobre la solicitud enviada por el cliente al servidor.
+  - Ejemplos: `Host`, `User-Agent`, `Accept`, `Content-Type`, `Authorization`, etc.
 - <b>Response Headers (Encabezados de Respuesta)</b>:
- - Proporcionan información adicional sobre la respuesta que el servidor envía al cliente.
- - Ejemplos: `Content-Type`, `Content-Length`, `Set-Cookie`, `Location`, etc.
+  - Proporcionan información adicional sobre la respuesta que el servidor envía al cliente.
+  - Ejemplos: `Content-Type`, `Content-Length`, `Set-Cookie`, `Location`, etc.
 
 <h2>Uso de Encabezados en la API de Servlets:</h2>
 <h3>Obtener Encabezados de Solicitud:</h3>

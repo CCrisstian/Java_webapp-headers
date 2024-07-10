@@ -179,3 +179,45 @@ public String getRemoteAddr()
 - <b>Registro de actividad del cliente</b>: Almacenar la dirección IP del cliente en los registros del servidor para análisis de uso y auditoría.
 - <b>Control de acceso</b>: Implementar restricciones basadas en la dirección IP para permitir o denegar el acceso a ciertos recursos.
 - <b>Detección de fraudes</b>: Utilizar la dirección IP para identificar patrones sospechosos y prevenir actividades fraudulentas.
+
+<h1 align="center">Json</h1>
+<p>JSON (JavaScript Object Notation) es un formato de texto ligero y fácil de leer/escribir para el intercambio de datos. Se utiliza comúnmente para transmitir datos entre un servidor y una aplicación web, así como para almacenar y organizar datos estructurados de manera sencilla.</p>
+<h3>Características de JSON:</h3>
+
+- <b>Simplicidad</b>: Es fácil de entender y usar, tanto por humanos como por máquinas.
+- <b>Formato de texto</b>: Los datos se representan como texto legible, lo que facilita la lectura y el debug.
+- <b>Lenguaje independiente</b>: Aunque se deriva de JavaScript, JSON es compatible con muchos lenguajes de programación.
+
+<h3>Estructura de JSON:</h3>
+
+- <b>Objetos</b>: Representados por llaves {} y contienen pares clave-valor. Ejemplo:
+
+```json
+{
+  "nombre": "Juan",
+  "edad": 30,
+  "casado": true
+}
+```
+
+- <b>Arreglos (Arrays)</b>: Representados por corchetes [] y contienen una lista de valores. Ejemplo:
+
+```json
+[
+  "rojo",
+  "verde",
+  "azul"
+]
+```
+
+<h3>Usos de JSON:</h3>
+
+- <b>Intercambio de datos</b>: JSON se usa ampliamente para transmitir datos entre un cliente y un servidor en aplicaciones web a través de AJAX (Asynchronous JavaScript and XML).
+- <b>Configuración</b>: Muchas aplicaciones y servicios utilizan archivos JSON para almacenar configuraciones.
+- <b>Almacenamiento de datos</b>: Es común almacenar datos estructurados en bases de datos NoSQL como MongoDB, que utilizan JSON o formatos similares.
+
+<h3>Ventajas de JSON:</h3>
+
+- <b>Legibilidad</b>: El formato es fácil de leer y entender.
+- <b>Compatibilidad</b>: Es compatible con casi todos los lenguajes de programación modernos.
+- <b>Ligero</b>: Es menos verboso que XML, lo que reduce el tamaño de los datos transmitidos.
